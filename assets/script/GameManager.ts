@@ -12,7 +12,7 @@ export class GameManager extends Component {
     }
 
     update(deltaTime: number) {
-        
+
     }
 }
 

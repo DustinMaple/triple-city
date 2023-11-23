@@ -1024,6 +1024,17 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "block": [
+      {
+        "__id__": 9
+      },
+      {
+        "__id__": 15
+      },
+      {
+        "__id__": 21
+      }
+    ],
     "_id": "31Mg37wEFNGZGghQBvskAi"
   },
   {
