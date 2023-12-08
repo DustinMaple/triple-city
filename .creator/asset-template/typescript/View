@@ -1,0 +1,23 @@
+import { _decorator, Component, Node } from 'cc';
+const { ccclass, property } = _decorator;
+
+/**
+ * 
+ * <%UnderscoreCaseClassName%>
+ * <%CamelCaseClassName%>
+ * <%Author%>
+ * <%DateTime%>
+ * <%FileBasename%>
+ * <%FileBasenameNoExtension%>
+ * <%URL%>
+ * <%ManualUrl%>
+ *
+ */
+
+@ccclass('<%CamelCaseClassName%>View')
+export class <%CamelCaseClassName%>View extends Component {
+    start() {
+
+    }
+
+}
