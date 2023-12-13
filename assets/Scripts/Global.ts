@@ -1,22 +1,17 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, view } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Global')
 export class Global extends Component {
+    private static _WINDOW_WIDTH: number;
+
+
     static init() {
-        throw new Error('Method not implemented.');
-    }
-    static WORLD = "world";
-    hello = "hello";
-
-
-
-    start() {
-
+        Global._WINDOW_WIDTH = Math.round(view.getVisibleSize().width);
     }
 
-    update(deltaTime: number) {
-        
+    static windowWidth() {
+        return Global._WINDOW_WIDTH;
     }
 }
 
