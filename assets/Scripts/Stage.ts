@@ -23,6 +23,9 @@ export class Stage extends Component {
      * 随机出来的下一个元素
      */
     private _nextElement: number;
+    private _boxes: Box[][];
+    private _same: number[] = [];
+    private _sameCount: number = 0;
 
     set AreaSize(size: number) {
         this._areaSize = size;
@@ -31,14 +34,17 @@ export class Stage extends Component {
     start() {
         console.info("构建游戏场景，size=", this._areaSize);
         console.info("窗口宽:", Global.windowWidth());
-
+        this._boxes = new Array(this._areaSize);
+        for (let i = 0; i < this._areaSize;++i){
+            this._boxes[i] = new Array(this._areaSize);
+        }
         this.addArea();
         this.addBox();
         this.randomNext();
     }
 
     randomNext() {
-        this._nextElement = Math.floor(Math.random() * 2);
+        this._nextElement = Math.floor(Math.random() * 2) + 1;
         console.log("random:", this._nextElement);
     }
 
@@ -64,16 +70,19 @@ export class Stage extends Component {
         for (let i = 0; i < this._areaSize; ++i){
             for (let j = 0; j < this._areaSize; ++j){
                 let boxPosition = new Vec3(origin.x + (j * this._boxWidth + half), origin.y + (i * this._boxWidth + half))
-                this.createBox(boxPosition, i * this._areaSize + j);
+                this.createBox(boxPosition, i, j);
             }
         }
     }
 
-    createBox(boxPosition: Vec3, index: number) {
+    createBox(boxPosition: Vec3, x: number, y: number) {
         let boxNode: Node = instantiate(this.boxPrefab);
         boxNode.setPosition(boxPosition);
         let boxComp: Box = boxNode.getComponent(Box);
-        boxComp.index = index;
+        this._boxes[x][y] = boxComp;
+
+        boxComp.x = x;
+        boxComp.y = y;
         const transform = boxNode.getComponent(UITransform);
         transform.setContentSize(this._boxWidth, this._boxWidth);
 
@@ -89,10 +98,76 @@ export class Stage extends Component {
     clickBox(event: EventMouse) {
         const clickNode = event.target as Node;
         const boxComp:Box = clickNode.getComponent(Box);
-        console.log("click:", boxComp.index);
+        console.log("click:[%s, %s], 准备设置元素:%s", boxComp.x, boxComp.y, this._nextElement);
 
-        boxComp.setElement(this._nextElement);
+        let elementId:number = this.checkUp(boxComp.x, boxComp.y, this._nextElement);
+
+        this.handleSame();
+        boxComp.element = elementId;
         this.randomNext();
+    }
+
+    checkUp(x: number, y: number, elementId: number): number {
+        this._sameCount = 0;
+        this.findSame(x, y, elementId);
+
+        if (this._sameCount == 1) {
+            this._same.pop();
+        }else if (this._sameCount >= 2) {
+            elementId = elementId + 1;
+            console.log("升级:", elementId)
+            return this.checkUp(x, y, elementId);
+        }
+
+        return elementId;
+    }
+
+    findSame(x: number, y: number, elementId: number) {
+        this.checkSame(x + 1, y, elementId);
+        this.checkSame(x, y + 1, elementId);
+        this.checkSame(x - 1, y, elementId);
+        this.checkSame(x, y - 1, elementId);
+    }
+
+    checkSame(x: number, y: number, elementId: number) {
+        if (this.invalid(x, y)) {
+            return;
+        }
+
+        const index = x * this._areaSize + y;
+        if (this._same.indexOf(index) != -1) {
+            return;
+        }
+
+        if (this._boxes[x][y].element == elementId) {
+            this._same.push(index);
+            this._sameCount++;
+            this.findSame(x, y, elementId);
+        }
+    }
+
+    handleSame() {
+        if (!this._same) {
+            return;
+        }
+        console.log("相同：", this._same);
+
+        if (this._same.length <= 1) {
+            this._same = [];
+            return;
+        }
+
+        for (var value of this._same) {
+            let x = Math.floor(value / this._areaSize);
+            let y = value % this._areaSize;
+
+            this._boxes[x][y].clear();
+        }
+        this._same = [];
+    }
+
+    invalid(x : number, y: number): boolean {
+        return x < 0 || x >= this._areaSize || y < 0 || y >= this._areaSize;
     }
 }
 
