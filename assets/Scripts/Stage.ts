@@ -1,4 +1,4 @@
-import { _decorator, Component, EventMouse, Input, instantiate, Node, NodeEventType, Prefab, UITransform, Vec2, Vec3 } from 'cc';
+import { _decorator, Component, EventMouse, Input, instantiate, Label, Node, NodeEventType, Prefab, UITransform, Vec2, Vec3 } from 'cc';
 import { Boot } from './Boot';
 import { Global } from './Global';
 import { Box } from './Box';
@@ -14,6 +14,9 @@ export class Stage extends Component {
 
     @property(Prefab)
     boxPrefab: Prefab;
+
+    @property(Label)
+    nextLabel: Label;
 
     private _areaWidth: number;
     private _areaSize: number;
@@ -45,6 +48,7 @@ export class Stage extends Component {
 
     randomNext() {
         this._nextElement = Math.floor(Math.random() * 2) + 1;
+        this.nextLabel.string = this._nextElement.toString();
         console.log("random:", this._nextElement);
     }
 
