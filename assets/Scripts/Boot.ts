@@ -19,6 +19,7 @@ export class Boot extends Component {
     private _curStageSize: number = 0;
 
     private _artBundle:AssetManager.Bundle;
+    private _resBundle:AssetManager.Bundle;
 
     static Inst() {
         return this._ins;
@@ -38,6 +39,15 @@ export class Boot extends Component {
             console.log("bundle:", bundle);
             this._artBundle = bundle;
         })
+
+        assetManager.loadBundle('Res', (err, bundle) => {
+            if (err) {
+                return console.error("加载配置出错");
+            }
+
+            console.log("加载完配置");
+        })
+
 
         this.node.getChildByName("Bg").active = false;
         this.openStartView();

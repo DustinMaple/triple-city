@@ -47,7 +47,13 @@ export class Stage extends Component {
     }
 
     randomNext() {
-        this._nextElement = Math.floor(Math.random() * 2) + 1;
+        let next: number = Math.floor(Math.random() * 10)
+        
+        if (next < 3) {
+            this._nextElement = 2;
+        } else {
+            this._nextElement = 1;
+        }
         this.nextLabel.string = this._nextElement.toString();
         console.log("random:", this._nextElement);
     }
