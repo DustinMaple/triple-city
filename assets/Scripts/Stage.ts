@@ -18,6 +18,9 @@ export class Stage extends Component {
     @property(Label)
     nextLabel: Label;
 
+    @property(Prefab)
+    endMenu: Prefab;
+
     private _areaWidth: number;
     private _areaSize: number;
     private _boxWidth: number;
@@ -29,6 +32,8 @@ export class Stage extends Component {
     private _boxes: Box[][];
     private _same: number[] = [];
     private _sameCount: number = 0;
+    private _elementCount: number = 0;
+    private _elementCountLimit: number;
 
     set AreaSize(size: number) {
         this._areaSize = size;
@@ -38,9 +43,10 @@ export class Stage extends Component {
         console.info("构建游戏场景，size=", this._areaSize);
         console.info("窗口宽:", Global.windowWidth());
         this._boxes = new Array(this._areaSize);
-        for (let i = 0; i < this._areaSize;++i){
+        for (let i = 0; i < this._areaSize; ++i) {
             this._boxes[i] = new Array(this._areaSize);
         }
+        this._elementCountLimit = this._areaSize * this._areaSize;
         this.addArea();
         this.addBox();
         this.randomNext();
@@ -48,7 +54,7 @@ export class Stage extends Component {
 
     randomNext() {
         let next: number = Math.floor(Math.random() * 10)
-        
+
         if (next < 3) {
             this._nextElement = 2;
         } else {
@@ -71,14 +77,14 @@ export class Stage extends Component {
     }
 
     addBox() {
-        
+
         this._boxWidth = Math.round(this._areaWidth / this._areaSize);
         const half = this._boxWidth / 2
 
-        const origin:Vec3 = new Vec3(this.node.position.x - this._areaWidth / 2, this.node.position.y - this._areaWidth / 2);
+        const origin: Vec3 = new Vec3(this.node.position.x - this._areaWidth / 2, this.node.position.y - this._areaWidth / 2);
 
-        for (let i = 0; i < this._areaSize; ++i){
-            for (let j = 0; j < this._areaSize; ++j){
+        for (let i = 0; i < this._areaSize; ++i) {
+            for (let j = 0; j < this._areaSize; ++j) {
                 let boxPosition = new Vec3(origin.x + (j * this._boxWidth + half), origin.y + (i * this._boxWidth + half))
                 this.createBox(boxPosition, i, j);
             }
@@ -101,20 +107,26 @@ export class Stage extends Component {
         this.node.addChild(boxNode);
     }
 
-    update(deltaTime: number) {
-
-    }
-
     clickBox(event: EventMouse) {
         const clickNode = event.target as Node;
-        const boxComp:Box = clickNode.getComponent(Box);
+        const boxComp: Box = clickNode.getComponent(Box);
         console.log("click:[%s, %s], 准备设置元素:%s", boxComp.x, boxComp.y, this._nextElement);
 
-        let elementId:number = this.checkUp(boxComp.x, boxComp.y, this._nextElement);
+        let elementId: number = this.checkUp(boxComp.x, boxComp.y, this._nextElement);
 
         this.handleSame();
         boxComp.element = elementId;
-        this.randomNext();
+
+        if (this.isOver()) {
+
+        } else {
+            this.randomNext();
+        }
+
+    }
+
+    isOver(): boolean {
+        return this._elementCount >= this._elementCountLimit;
     }
 
     checkUp(x: number, y: number, elementId: number): number {
@@ -123,7 +135,7 @@ export class Stage extends Component {
 
         if (this._sameCount == 1) {
             this._same.pop();
-        }else if (this._sameCount >= 2) {
+        } else if (this._sameCount >= 2) {
             elementId = elementId + 1;
             console.log("升级:", elementId)
             return this.checkUp(x, y, elementId);
@@ -176,7 +188,7 @@ export class Stage extends Component {
         this._same = [];
     }
 
-    invalid(x : number, y: number): boolean {
+    invalid(x: number, y: number): boolean {
         return x < 0 || x >= this._areaSize || y < 0 || y >= this._areaSize;
     }
 }

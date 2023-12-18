@@ -2,7 +2,7 @@
   "ver": "1.0.26",
   "importer": "image",
   "imported": true,
-  "uuid": "eb5b0d0a-990e-4df4-a4c0-96915dffd19e",
+  "uuid": "007395d6-7c20-45e5-b377-4f277b805aeb",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "eb5b0d0a-990e-4df4-a4c0-96915dffd19e@6c48a",
-      "displayName": "WoodHouse",
+      "uuid": "007395d6-7c20-45e5-b377-4f277b805aeb@6c48a",
+      "displayName": "GoodHouse",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "eb5b0d0a-990e-4df4-a4c0-96915dffd19e",
+        "imageUuidOrDatabaseUri": "007395d6-7c20-45e5-b377-4f277b805aeb",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,8 +34,8 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "eb5b0d0a-990e-4df4-a4c0-96915dffd19e@f9941",
-      "displayName": "WoodHouse",
+      "uuid": "007395d6-7c20-45e5-b377-4f277b805aeb@f9941",
+      "displayName": "GoodHouse",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
@@ -45,9 +45,9 @@
         "offsetX": 0,
         "offsetY": 0.5,
         "trimX": 0,
-        "trimY": 19,
+        "trimY": 18,
         "width": 128,
-        "height": 89,
+        "height": 91,
         "rawWidth": 128,
         "rawHeight": 128,
         "borderTop": 0,
@@ -62,16 +62,16 @@
         "vertices": {
           "rawPosition": [
             -64,
-            -44.5,
+            -45.5,
             0,
             64,
-            -44.5,
+            -45.5,
             0,
             -64,
-            44.5,
+            45.5,
             0,
             64,
-            44.5,
+            45.5,
             0
           ],
           "indexes": [
@@ -84,37 +84,37 @@
           ],
           "uv": [
             0,
-            109,
+            110,
             128,
-            109,
+            110,
             0,
-            20,
+            19,
             128,
-            20
+            19
           ],
           "nuv": [
             0,
-            0.15625,
+            0.1484375,
             1,
-            0.15625,
+            0.1484375,
             0,
-            0.8515625,
+            0.859375,
             1,
-            0.8515625
+            0.859375
           ],
           "minPos": [
             -64,
-            -44.5,
+            -45.5,
             0
           ],
           "maxPos": [
             64,
-            44.5,
+            45.5,
             0
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "eb5b0d0a-990e-4df4-a4c0-96915dffd19e@6c48a",
+        "imageUuidOrDatabaseUri": "007395d6-7c20-45e5-b377-4f277b805aeb@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.12",
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "eb5b0d0a-990e-4df4-a4c0-96915dffd19e@f9941"
+    "redirect": "007395d6-7c20-45e5-b377-4f277b805aeb@f9941"
   }
 }
