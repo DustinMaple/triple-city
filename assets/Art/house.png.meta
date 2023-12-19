@@ -2,7 +2,7 @@
   "ver": "1.0.26",
   "importer": "image",
   "imported": true,
-  "uuid": "d898857e-5282-4c84-ba45-5374cbab5c09",
+  "uuid": "766dd13d-1db6-423b-83f1-0420e570196d",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "d898857e-5282-4c84-ba45-5374cbab5c09@6c48a",
+      "uuid": "766dd13d-1db6-423b-83f1-0420e570196d@6c48a",
       "displayName": "House",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "d898857e-5282-4c84-ba45-5374cbab5c09",
+        "imageUuidOrDatabaseUri": "766dd13d-1db6-423b-83f1-0420e570196d",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "d898857e-5282-4c84-ba45-5374cbab5c09@f9941",
+      "uuid": "766dd13d-1db6-423b-83f1-0420e570196d@f9941",
       "displayName": "House",
       "id": "f9941",
       "name": "spriteFrame",
@@ -114,7 +114,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "d898857e-5282-4c84-ba45-5374cbab5c09@6c48a",
+        "imageUuidOrDatabaseUri": "766dd13d-1db6-423b-83f1-0420e570196d@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.12",
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "d898857e-5282-4c84-ba45-5374cbab5c09@f9941"
+    "redirect": "766dd13d-1db6-423b-83f1-0420e570196d@f9941"
   }
 }

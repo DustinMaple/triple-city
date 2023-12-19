@@ -2,7 +2,7 @@
   "ver": "1.0.26",
   "importer": "image",
   "imported": true,
-  "uuid": "8d14ecec-5d80-4225-b8e2-8950d6593fea",
+  "uuid": "a7878b7e-b93e-49d1-ba7c-3cca80c17397",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "8d14ecec-5d80-4225-b8e2-8950d6593fea@6c48a",
+      "uuid": "a7878b7e-b93e-49d1-ba7c-3cca80c17397@6c48a",
       "displayName": "Emperor",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "8d14ecec-5d80-4225-b8e2-8950d6593fea",
+        "imageUuidOrDatabaseUri": "a7878b7e-b93e-49d1-ba7c-3cca80c17397",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "8d14ecec-5d80-4225-b8e2-8950d6593fea@f9941",
+      "uuid": "a7878b7e-b93e-49d1-ba7c-3cca80c17397@f9941",
       "displayName": "Emperor",
       "id": "f9941",
       "name": "spriteFrame",
@@ -46,10 +46,10 @@
         "offsetY": 0,
         "trimX": 0,
         "trimY": 0,
-        "width": 500,
-        "height": 500,
-        "rawWidth": 500,
-        "rawHeight": 500,
+        "width": 128,
+        "height": 128,
+        "rawWidth": 128,
+        "rawHeight": 128,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
@@ -61,17 +61,17 @@
         "meshType": 0,
         "vertices": {
           "rawPosition": [
-            -250,
-            -250,
+            -64,
+            -64,
             0,
-            250,
-            -250,
+            64,
+            -64,
             0,
-            -250,
-            250,
+            -64,
+            64,
             0,
-            250,
-            250,
+            64,
+            64,
             0
           ],
           "indexes": [
@@ -84,12 +84,12 @@
           ],
           "uv": [
             0,
-            500,
-            500,
-            500,
+            128,
+            128,
+            128,
             0,
             0,
-            500,
+            128,
             0
           ],
           "nuv": [
@@ -103,18 +103,18 @@
             1
           ],
           "minPos": [
-            -250,
-            -250,
+            -64,
+            -64,
             0
           ],
           "maxPos": [
-            250,
-            250,
+            64,
+            64,
             0
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "8d14ecec-5d80-4225-b8e2-8950d6593fea@6c48a",
+        "imageUuidOrDatabaseUri": "a7878b7e-b93e-49d1-ba7c-3cca80c17397@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.12",
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "8d14ecec-5d80-4225-b8e2-8950d6593fea@f9941"
+    "redirect": "a7878b7e-b93e-49d1-ba7c-3cca80c17397@f9941"
   }
 }
