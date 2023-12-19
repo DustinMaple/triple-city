@@ -1,4 +1,4 @@
-import { _decorator, Component, EventMouse, Input, instantiate, Label, Node, NodeEventType, Prefab, Sprite, UITransform, Vec2, Vec3 } from 'cc';
+import { _decorator, Component, EventMouse, Input, instantiate, Label, Node, NodeEventType, Prefab, Sprite, SpriteFrame, UITransform, Vec2, Vec3 } from 'cc';
 import { Boot } from './Boot';
 import { Global } from './Global';
 import { Box } from './Box';
@@ -19,8 +19,8 @@ export class Stage extends Component {
     @property(Label)
     nextLabel: Label;
 
-    // @property(Sprite)
-    // nextIcon: Sprite;
+    @property(Sprite)
+    nextIcon: Sprite;
 
     @property(Node)
     endMenu: Node;
@@ -70,6 +70,11 @@ export class Stage extends Component {
             this._nextElement = 1;
         }
         this.nextLabel.string = this._nextElement.toString();
+        let nextElement = ElementRes.getRes(this._nextElement);
+        Boot.Inst().loadSprite(nextElement.pic + '/spriteFrame', (spriteFrame: SpriteFrame) => {
+            console.log("预览：", nextElement.pic);
+            this.nextIcon.spriteFrame = spriteFrame;
+        })
         console.log("random:", this._nextElement);
     }
 

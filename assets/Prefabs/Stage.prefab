@@ -402,7 +402,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -193.974,
-      "y": 507.9859999999999,
+      "y": 465,
       "z": 0
     },
     "_lrot": {
@@ -496,7 +496,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 340,
-      "height": 60
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -667,8 +667,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 120,
-      "height": 50.4
+      "width": 119.98328653971355,
+      "height": 50.400000000000006
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -706,7 +706,7 @@
     "_string": "下一个：",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 30,
+    "_actualFontSize": 31.304347826086957,
     "_fontSize": 30,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -748,7 +748,7 @@
       "__id__": 14
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 30
@@ -762,7 +762,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
+      "x": 76.585,
       "y": 0,
       "z": 0
     },
@@ -803,8 +803,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 40,
-      "height": 36
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -840,12 +840,12 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+      "__uuid__": "c1a98701-7284-418a-820c-235878cb6b95@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
     "_fillType": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -884,7 +884,7 @@
       "__id__": 14
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 36
@@ -978,7 +978,7 @@
     "_string": "",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 20,
+    "_actualFontSize": 20.869565217391305,
     "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -1026,7 +1026,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 340,
-      "height": 60
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1086,7 +1086,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 184.026,
-      "y": 507.986,
+      "y": 465,
       "z": 0
     },
     "_lrot": {
@@ -1180,7 +1180,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 340,
-      "height": 60
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1310,7 +1310,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -60.291,
+      "x": -89.621,
       "y": 0,
       "z": 0
     },
@@ -1351,8 +1351,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 90,
-      "height": 50.4
+      "width": 89.98746490478516,
+      "height": 50.400000000000006
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1390,7 +1390,7 @@
     "_string": "积分：",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 30,
+    "_actualFontSize": 31.304347826086957,
     "_fontSize": 30,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -1623,8 +1623,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 150.1611328125,
-      "height": 50.4
+      "width": 150.14009284973145,
+      "height": 50.400000000000006
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1662,7 +1662,7 @@
     "_string": "100000000",
     "_horizontalAlign": 0,
     "_verticalAlign": 1,
-    "_actualFontSize": 30,
+    "_actualFontSize": 31.304347826086957,
     "_fontSize": 30,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -1710,7 +1710,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 340,
-      "height": 60
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2286,6 +2286,9 @@
     },
     "nextLabel": {
       "__id__": 38
+    },
+    "nextIcon": {
+      "__id__": 32
     },
     "endMenu": {
       "__id__": 79

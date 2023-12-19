@@ -7,9 +7,6 @@ const FLY_TIME = 0.2;
 
 @ccclass('Box')
 export class Box extends Component {
-    
-    @property(Label)
-    nameLabel: Label = null;
 
     @property(Sprite)
     ground: Sprite = null;
@@ -54,7 +51,6 @@ export class Box extends Component {
             this.reset();
         }
 
-        this.nameLabel.string = value.toString();
         Boot.Inst().loadSprite('test_ground/spriteFrame', (spriteFrame: SpriteFrame) => {
             this.ground.spriteFrame = spriteFrame;
         })
@@ -75,7 +71,6 @@ export class Box extends Component {
         this.ground.spriteFrame = null;
         // this.elementSprite.spriteFrame = null;
         this._element = 0;
-        this.nameLabel.string = '';
 
         this.moveTo(target);
     }
@@ -117,6 +112,7 @@ export class Box extends Component {
     reset(){
         this.elementSprite.spriteFrame = null;
         this.elementSprite.node.setPosition(Vec3.ZERO);
+        this.elementSprite.node.setScale(Vec3.ONE);
         this._moveTime = 0;
         this._target = null;
     }
