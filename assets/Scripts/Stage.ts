@@ -1,4 +1,4 @@
-import { _decorator, Component, EventMouse, Input, instantiate, Label, Node, NodeEventType, Prefab, UITransform, Vec2, Vec3 } from 'cc';
+import { _decorator, Component, EventMouse, Input, instantiate, Label, Node, NodeEventType, Prefab, Sprite, UITransform, Vec2, Vec3 } from 'cc';
 import { Boot } from './Boot';
 import { Global } from './Global';
 import { Box } from './Box';
@@ -18,6 +18,9 @@ export class Stage extends Component {
 
     @property(Label)
     nextLabel: Label;
+
+    // @property(Sprite)
+    // nextIcon: Sprite;
 
     @property(Node)
     endMenu: Node;

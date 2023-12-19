@@ -3,12 +3,11 @@ import { Boot } from './Boot';
 import { ElementRes } from './Res/ElementRes';
 const { ccclass, property } = _decorator;
 
-const FLY_TIME = 1;
+const FLY_TIME = 0.2;
 
 @ccclass('Box')
 export class Box extends Component {
     
-
     @property(Label)
     nameLabel: Label = null;
 
@@ -51,6 +50,10 @@ export class Box extends Component {
     set element(value: number) {
         this._element = value;
 
+        if(this._target){
+            this.reset();
+        }
+
         this.nameLabel.string = value.toString();
         Boot.Inst().loadSprite('test_ground/spriteFrame', (spriteFrame: SpriteFrame) => {
             this.ground.spriteFrame = spriteFrame;
@@ -60,6 +63,8 @@ export class Box extends Component {
         Boot.Inst().loadSprite(res.pic + '/spriteFrame', (spriteFrame: SpriteFrame) => {
             this.elementSprite.spriteFrame = spriteFrame;
         })
+
+        console.log(`box node:%s, sprite node:%s`, this.node.position, this.elementSprite.node.position)
     }
 
     get element() {
@@ -76,10 +81,12 @@ export class Box extends Component {
     }
 
     moveTo(target: Vec3) {
-        this._target = target;
-        let dis = this._target.subtract(this.node.position).length();
+        console.log("move to", target)
+        this._target = new Vec3(target.x - this.node.position.x, target.y - this.node.position.y);
+        let dis = this._target.length();
         this._speed = dis / FLY_TIME;
         this._moveTime = 0;
+        this.elementSprite.node.setScale(new Vec3(0.8, 0.8));
     }
 
 
@@ -91,22 +98,27 @@ export class Box extends Component {
 
         this._moveTime += dt;
         if (this._moveTime >= FLY_TIME) {
-            this.elementSprite.spriteFrame = null;
-            this.elementSprite.node.setPosition(this.node.position);
-            this._moveTime = 0;
-            this._target = null;
+            this.reset();
             console.log("fly finish")
             return;
         }
 
         let curPos:Vec3 = this.elementSprite.node.position;
-        let dir: Vec3 = this._target.subtract(curPos);
-        let moveDis = this._speed * dt;
-        let rate = moveDis / dir.length();
-        let x = curPos.x + dir.x * rate;
-        let y = curPos.y + dir.y * rate;
+        let dir: Vec2 = new Vec2(this._target.x - curPos.x, this._target.y - curPos.y);
+        let length = dir.length();
+        let dirX = dir.x / length;
+        let dirY = dir.y / length;
+        let x = curPos.x + this._speed * dt * dirX;
+        let y = curPos.y + this._speed * dt * dirY;
         this.elementSprite.node.setPosition(new Vec3(x, y));
         console.log(`设置：(%s, %s)---(%s, %s)， target:%s, %s`, this._x, this._y, x, y, this._target.x, this._target.y);
+    }
+
+    reset(){
+        this.elementSprite.spriteFrame = null;
+        this.elementSprite.node.setPosition(Vec3.ZERO);
+        this._moveTime = 0;
+        this._target = null;
     }
 }
 
