@@ -5,7 +5,7 @@ const { ccclass, property } = _decorator;
 @ccclass('StartView')
 export class StartView extends Component {
     onNormalClick() {
-        Boot.Inst().startStage(5);
+        Boot.Inst().startStage(6);
     }
 }
 

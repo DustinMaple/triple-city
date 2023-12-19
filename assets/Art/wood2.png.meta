@@ -2,7 +2,11 @@
   "ver": "1.0.26",
   "importer": "image",
   "imported": true,
+<<<<<<< HEAD
   "uuid": "ac108259-ed08-404e-baad-7fffd3b170b9",
+=======
+  "uuid": "2c3c6020-33d7-4aa4-b5df-9cc4381bba89",
+>>>>>>> 58d2c72ca67e38960024fce9912adf2f2eb79cdd
   "files": [
     ".json",
     ".png"
@@ -10,14 +14,22 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
+<<<<<<< HEAD
       "uuid": "ac108259-ed08-404e-baad-7fffd3b170b9@6c48a",
+=======
+      "uuid": "2c3c6020-33d7-4aa4-b5df-9cc4381bba89@6c48a",
+>>>>>>> 58d2c72ca67e38960024fce9912adf2f2eb79cdd
       "displayName": "wood2",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
+<<<<<<< HEAD
         "imageUuidOrDatabaseUri": "ac108259-ed08-404e-baad-7fffd3b170b9",
+=======
+        "imageUuidOrDatabaseUri": "2c3c6020-33d7-4aa4-b5df-9cc4381bba89",
+>>>>>>> 58d2c72ca67e38960024fce9912adf2f2eb79cdd
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +46,11 @@
     },
     "f9941": {
       "importer": "sprite-frame",
+<<<<<<< HEAD
       "uuid": "ac108259-ed08-404e-baad-7fffd3b170b9@f9941",
+=======
+      "uuid": "2c3c6020-33d7-4aa4-b5df-9cc4381bba89@f9941",
+>>>>>>> 58d2c72ca67e38960024fce9912adf2f2eb79cdd
       "displayName": "wood2",
       "id": "f9941",
       "name": "spriteFrame",
@@ -114,7 +130,11 @@
           ]
         },
         "isUuid": true,
+<<<<<<< HEAD
         "imageUuidOrDatabaseUri": "ac108259-ed08-404e-baad-7fffd3b170b9@6c48a",
+=======
+        "imageUuidOrDatabaseUri": "2c3c6020-33d7-4aa4-b5df-9cc4381bba89@6c48a",
+>>>>>>> 58d2c72ca67e38960024fce9912adf2f2eb79cdd
         "atlasUuid": ""
       },
       "ver": "1.0.12",
@@ -129,6 +149,10 @@
     "type": "sprite-frame",
     "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
+<<<<<<< HEAD
     "redirect": "ac108259-ed08-404e-baad-7fffd3b170b9@f9941"
+=======
+    "redirect": "2c3c6020-33d7-4aa4-b5df-9cc4381bba89@f9941"
+>>>>>>> 58d2c72ca67e38960024fce9912adf2f2eb79cdd
   }
 }
