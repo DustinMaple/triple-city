@@ -19,7 +19,8 @@ export class Boot extends Component {
     private _curStageSize: number = 0;
 
     private _artBundle:AssetManager.Bundle;
-    private _resBundle:AssetManager.Bundle;
+    private _resBundle: AssetManager.Bundle;
+    private _stage: Node;
 
     static Inst() {
         return this._ins;
@@ -67,10 +68,10 @@ export class Boot extends Component {
         this._curStageSize = size;
         this._startView.active = false;
 
-        const stage: Node = instantiate(this.stageViewPrefab);
-        const stageComp: Stage = stage.getComponent(Stage);
+        this._stage = instantiate(this.stageViewPrefab);
+        const stageComp: Stage = this._stage.getComponent(Stage);
         stageComp.AreaSize = size;
-        this.node.addChild(stage);
+        this.node.addChild(this._stage);
     }
 
     getSize() {
@@ -85,6 +86,11 @@ export class Boot extends Component {
 
             handle(spriteFrame); 
         })
+    }
+
+    backHome() {
+        this._stage.destroy();
+        this._startView.active = true;
     }
 }
 
